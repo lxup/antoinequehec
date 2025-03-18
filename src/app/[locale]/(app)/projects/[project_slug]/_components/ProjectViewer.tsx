@@ -17,6 +17,10 @@ const ProjectViewer = ({
 				<ReactPlayer
 				url={media_url}
 				controls
+				width={'100%'}
+				style={{
+					maxWidth: '768px',
+				}}
 				/>
 			)
 		default:

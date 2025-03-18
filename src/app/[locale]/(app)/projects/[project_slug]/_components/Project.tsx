@@ -8,8 +8,8 @@ const Project = ({
 	project: Data;
 }) => {
 	return (
-	<div className="flex flex-col items-center">
-		<h1 className="text-6xl font-bold">{project.title}</h1>
+	<div className="flex flex-col items-center p-2">
+		<h1 className="text-center text-6xl font-bold">{project.title}</h1>
 		<ProjectViewer type={project.type} media_url={project.media_url} />
 		<div className="max-w-xl">
 			<p className="text-muted-foreground italic">
