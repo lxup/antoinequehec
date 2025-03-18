@@ -14,7 +14,6 @@ const ProjectViewer = ({
 } : {
 	project: Data;
 }) => {
-	console.log('project', project);
 	const router = useRouter();
 	return (
 		<DialogOverlay asChild key={`overlay-${project.id}`}>
@@ -43,7 +42,7 @@ const ProjectViewer = ({
 							height={400}
 							/>
 						</motion.div>
-						{project.description ? <p className="text-secondary max-w-md text-justify">{project.description}</p> : null}
+						{project.description ? <p className="text-foreground max-w-md text-justify">{project.description}</p> : null}
 					</motion.div>
 				</DialogContent>
 			</motion.div>

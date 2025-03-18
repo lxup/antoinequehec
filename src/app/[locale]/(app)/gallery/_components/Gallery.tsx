@@ -100,7 +100,7 @@ const Gallery = ({
 								onClick={handleClick}
 								layoutId={`image-${item.image.id}`}
 								className={`
-									realtive flex mb-6 cursor-pointer
+									realtive flex cursor-pointer
 									${currentImage === item.image.id ? 'relative z-1' : ''}
 								`}
 								ref={(i === images.pages?.length - 1) && (index === page?.length - 1) ? ref : undefined }

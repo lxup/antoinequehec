@@ -1,6 +1,5 @@
 'use client';
-
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+// import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { matchQuery, MutationCache, QueryClient, QueryClientProvider, QueryKey } from "@tanstack/react-query";
 
 type ReactQueryProviderProps = {
@@ -31,7 +30,7 @@ const ReactQueryProvider = ({ children } : ReactQueryProviderProps) => {
 	return (
 		<QueryClientProvider client={queryClient}>
 			{children}
-			<ReactQueryDevtools initialIsOpen={false} />
+			{/* <ReactQueryDevtools initialIsOpen={false} /> */}
 		</QueryClientProvider>
 	)
 };

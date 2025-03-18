@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { site } from "@/constants/site";
 import { Link } from "@/lib/i18n/routing";
 import { getStrapiData } from "@/lib/strapi/actions";
 import { getStrapiMediaUrl } from "@/lib/strapi/strapi";
@@ -40,7 +39,7 @@ const Contact = async (
 			) : null}
 			<div className="flex flex-col border-2 border-foreground w-fit p-2">
 				<h2 className="font-bold text-xl">{t('contact')}</h2>
-				<p>{site.title}</p>
+				<p>{data.full_name}</p>
 				<Link className="hover:underline underline-offset-2" href={`tel:${data.contact_phone}`}>{data.contact_phone}</Link>
 				<Link className="hover:underline underline-offset-2" href={`mailto:${data.contact_email}`}>{data.contact_email}</Link>
 			</div>

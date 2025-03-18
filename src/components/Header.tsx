@@ -1,7 +1,6 @@
 'use client';
 import { cn } from "@/lib/utils";
 import { Link, usePathname } from "@/lib/i18n/routing";
-import { site } from "@/constants/site";
 import { useTranslations } from "next-intl";
 import { Fragment, useMemo, useState } from "react";
 // import { useTransitionRouter } from "next-view-transitions";
@@ -19,11 +18,14 @@ import { MenuIcon } from "lucide-react";
 // import { Label } from "./ui/label";
 // import { Input } from "./ui/input";
 
+interface HeaderProps extends React.HTMLAttributes<HTMLDivElement> {
+	siteName?: string;
+}
+
 const Header = ({
+	siteName,
 	className,	
-} : {
-	className?: string;
-}) => {
+} : HeaderProps) => {
 	const pathname = usePathname();
 	const t = useTranslations('common');
 	const [ open, setOpen ] = useState(false);
@@ -82,7 +84,7 @@ const Header = ({
 
 	// };
 	return (
-		<header className={cn("flex justify-between items-center w-full p-2 bg-background", className)}>
+		<header className={cn("flex justify-between items-center w-full p-2", className)}>
 			<Link
 			href={'/'}
 			className="font-bold text-lg"
@@ -95,7 +97,7 @@ const Header = ({
 			// 	}
 			// }}
 			>
-				{site.title}
+				{siteName}
 			</Link>
 			<div className="hidden md:flex items-center gap-1">
 				{routes.map((route, index) => (
@@ -126,7 +128,7 @@ const Header = ({
 					</SheetTrigger>
 					<SheetContent>
 						<SheetHeader>
-						<SheetTitle>{site.title}</SheetTitle>
+						<SheetTitle>{siteName}</SheetTitle>
 						</SheetHeader>
 						<div className="flex flex-col gap-2 p-4">
 							{routes.map((route, index) => (

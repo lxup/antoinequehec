@@ -6,7 +6,6 @@ import { DialogContent, DialogOverlay, DialogTitle } from "@radix-ui/react-dialo
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { motion } from "framer-motion";
 
-
 const ImageViewer = ({
 	image,
 	description
@@ -46,7 +45,7 @@ const ImageViewer = ({
 							height={400}
 							/>
 						</motion.div>
-						{description ? <p className="text-secondary max-w-md text-justify">{description}</p> : null}
+						{description ? <p className="text-foreground max-w-md text-justify">{description}</p> : null}
 					</motion.div>
 				</DialogContent>
 			</motion.div>

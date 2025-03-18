@@ -1,4 +1,3 @@
-import { site } from '@/constants/site';
 import { getTranslations } from 'next-intl/server';
 
 export async function generateMetadata(
@@ -11,8 +10,8 @@ export async function generateMetadata(
   const params = await props.params;
   const t = await getTranslations({ locale: params.lang, namespace: 'pages.contact' });
   return {
-    title: t('metadata.title', { app: site.title }),
-    description: t('metadata.description', { app: site.title }),
+    title: t('metadata.title'),
+    description: t('metadata.description'),
   };
 }
 

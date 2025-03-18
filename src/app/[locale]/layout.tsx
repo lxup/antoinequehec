@@ -1,7 +1,5 @@
 import "@/styles/globals.css";
-import type { Metadata } from "next";
 import { Courier_Prime } from "next/font/google";
-import { site } from "@/constants/site";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { getFallbackLanguage } from "@/lib/i18n/fallback";
@@ -14,6 +12,9 @@ import { ModalProvider } from "@/provider/modal-provider";
 import { UIProvider } from "@/provider/ui-provider";
 import { ViewTransitions } from 'next-view-transitions';
 import { ReactQueryProvider } from "@/provider/react-query-provider";
+import { getGlobal } from "@/features/server";
+import { Metadata } from "next";
+import { getStrapiMediaUrl } from "@/lib/strapi/strapi";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -30,12 +31,18 @@ const courierPrime = Courier_Prime({
   weight: ["400", "700"],
 })
 
-export const metadata: Metadata = {
-  title: {
-    default: site.title,
-    template: `%s | ${site.title}`,
-  },
-  description: site.description,
+export async function generateMetadata(): Promise<Metadata> {
+  const { data } = await getGlobal();
+  return {
+    title: {
+      default: data.defaultSeo.metaTitle,
+      template: `%s | ${data.siteName}`,
+    },
+    description: data.defaultSeo.metaDescription,
+    icons: {
+      icon: getStrapiMediaUrl(data.favicon.url),
+    }
+  }
 };
 
 export default async function LocaleLayout({
@@ -60,7 +67,8 @@ export default async function LocaleLayout({
           <NextIntlClientProvider locale={locale} messages={messages}>
             <ThemeProvider
             attribute="class"
-            defaultTheme="light"
+            defaultTheme="dark"
+            forcedTheme="dark"
             enableSystem={false}
             disableTransitionOnChange={true}
             >
