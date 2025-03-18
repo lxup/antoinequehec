@@ -26,7 +26,7 @@ const ProjectsGallery = ({
 	} = useInfiniteQuery({
 		queryKey: ['projects'],
 		queryFn: async ({ pageParam = 1 }) => {
-			const res = await getStrapiData(`/projects?pagination[page]=${pageParam}&pagination[pageSize]=${data.meta.pagination.pageSize}&sort=updatedAt:desc&populate=*`);
+			const res = await getStrapiData(`/projects?pagination[page]=${pageParam}&pagination[pageSize]=${data.meta.pagination.pageSize}&sort[0]=importance:desc&sort[1]=date:desc&populate=*`);
 			return res;
 		},
 		initialPageParam: 1,

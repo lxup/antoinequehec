@@ -18,7 +18,7 @@ export async function generateMetadata(
 }
 
 const Projects = async () => {
-  const data = await getStrapiData('/projects?sort=updatedAt:desc&populate=*');
+  const data = await getStrapiData('/projects?sort[0]=importance:desc&sort[1]=date:desc&populate=*');
   return (
       <ProjectsGallery data={data} />
   );
