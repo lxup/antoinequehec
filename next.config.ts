@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
         pathname: '/uploads/**',
       }
     ]
-  }
+  },
 };
 
 export default withNextIntl(nextConfig);
