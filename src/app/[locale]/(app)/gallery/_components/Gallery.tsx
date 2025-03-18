@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from "react";
+import React from "react";
 import { useTranslations } from "next-intl";
 import { ImageWithFallback } from "@/components/ImageWithFallback";
 import { usePathname, useRouter } from "@/lib/i18n/routing";
@@ -10,7 +10,6 @@ import { motion } from "framer-motion"
 import { Data, StrapiResponse } from "@/types/type.db";
 import { getStrapiMediaUrl } from "@/lib/strapi/strapi";
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { useInView } from 'react-intersection-observer';
 import { getStrapiData } from "@/lib/strapi/actions";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
@@ -29,7 +28,6 @@ const Gallery = ({
 	const pathname = usePathname();
 	const router = useRouter();
 	const isOpen = pathname !== '/gallery';
-	const { ref, inView } = useInView();
 	const {
 		data: images,
 		fetchNextPage,
@@ -66,11 +64,6 @@ const Gallery = ({
 		isOpen ? (params.image_id ? String(params.image_id) : null) : undefined
 	)
 
-	useEffect(() => {
-		if (inView && hasNextPage) {
-			fetchNextPage();
-		}
-	}, [inView, hasNextPage, fetchNextPage]);
 	return (
 	<div className="flex flex-col gap-2 p-2">
 		<h1 className="text-center text-6xl font-bold">{t('gallery')}</h1>
@@ -86,7 +79,7 @@ const Gallery = ({
 				columnsCountBreakPoints={{ 0: 1, 300: 2, 500: 3, 700: 4, 900: 5 }}
 				>
 					<Masonry gutter="20px">
-					{images.pages.map(({ data: page }, i) => (
+					{images.pages.map(({ data: page }) => (
 						page.map((item: Data, index: number) => {
 							const handleClick = () => {
 								setCurrentImage(item.documentId);
@@ -103,7 +96,6 @@ const Gallery = ({
 									realtive flex cursor-pointer
 									${currentImage === item.image.id ? 'relative z-1' : ''}
 								`}
-								ref={(i === images.pages?.length - 1) && (index === page?.length - 1) ? ref : undefined }
 								>
 									<ImageWithFallback
 									src={getStrapiMediaUrl(item.image.url)}

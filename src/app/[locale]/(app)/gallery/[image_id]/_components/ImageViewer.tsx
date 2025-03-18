@@ -35,7 +35,7 @@ const ImageViewer = ({
 					>
 						<motion.div
 						layoutId={`image-${image.id}`}
-						className="relative w-full sm:w-md"
+						className="relative w-full sm:w-3xl"
 						onClick={(e) => e.stopPropagation()}>
 							<ImageWithFallback
 							src={image.src}

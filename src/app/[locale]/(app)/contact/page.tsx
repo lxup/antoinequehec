@@ -24,15 +24,19 @@ const Contact = async (
 			{data.book || data.cv ? (
 				<div className="flex gap-2 items-center">
 					{data.book ? (
-						<Button className="w-fit">
-							<BookIcon className="w-6 h-6" />
-							<Link href={getStrapiMediaUrl(data.book.url)} target="_blank" download>{t('book')}</Link>
+						<Button className="w-fit" asChild>
+							<Link href={getStrapiMediaUrl(data.book.url)} target="_blank" download>
+								<BookIcon className="w-6 h-6" />
+								{t('book')}
+							</Link>
 						</Button>
 					) : null}
 					{data.cv ? (
-						<Button className="w-fit">
-							<FileUserIcon className="w-6 h-6" />
-							<Link href={getStrapiMediaUrl(data.cv.url)} target="_blank" download>{t('cv')}</Link>
+						<Button className="w-fit" asChild>
+							<Link href={getStrapiMediaUrl(data.cv.url)} target="_blank" download>
+								<FileUserIcon className="w-6 h-6" />
+								{t('cv')}
+							</Link>
 						</Button>
 					) : null}
 				</div>
