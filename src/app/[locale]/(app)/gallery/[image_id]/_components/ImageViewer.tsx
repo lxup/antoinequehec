@@ -41,8 +41,15 @@ const ImageViewer = ({
 							src={image.src}
 							alt={image.alt}
 							className="w-full object-cover"
-							width={400}
-							height={400}
+							width={1000}
+							height={1000}
+							sizes={`
+								(min-width: 1280px) 20vw,
+								(min-width: 1024px) 25vw,
+								(min-width: 768px) 33.33vw,
+								(min-width: 640px) 50vw,
+								100vw	
+							`}
 							/>
 						</motion.div>
 						{description ? <p className="text-foreground max-w-md text-justify">{description}</p> : null}

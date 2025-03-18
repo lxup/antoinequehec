@@ -2,11 +2,11 @@
 import Image from 'next/image';
 import { ComponentProps, useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
-import { ImageIcon } from 'lucide-react';
+import { ImageIcon, VideoIcon } from 'lucide-react';
 
 interface ImageWithFallbackProps extends ComponentProps<typeof Image> {
   src: string;
-  type?: 'default' | 'alt';
+  type?: string;
   blurDataURL?: string;
 }
 
@@ -53,7 +53,7 @@ export function Fallback({
   alt,
 }: {
   className?: string;
-  type?: string | null;
+  type?: string;
   from?: string;
   to?: string;
   alt: string;
@@ -71,6 +71,8 @@ export function Fallback({
     >
       {type == 'alt' ? (
        <p>{alt}</p>
+      ) : type == 'video' ? (
+        <VideoIcon color="#fff" className="w-2/5 h-2/5" />
       ) : (
         <ImageIcon color="#fff" className="w-2/5 h-2/5" />
       )}

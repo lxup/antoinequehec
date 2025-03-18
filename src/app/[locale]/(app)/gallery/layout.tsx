@@ -28,7 +28,6 @@ const GalleryLayout = async ({ children }: GalleryLayoutProps) => {
         {children}
       </Gallery>
   );
-  return (children);
 };
 
 export default GalleryLayout;

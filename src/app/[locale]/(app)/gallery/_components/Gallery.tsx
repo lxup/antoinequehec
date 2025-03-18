@@ -93,7 +93,7 @@ const Gallery = ({
 								onClick={handleClick}
 								layoutId={`image-${item.image.id}`}
 								className={`
-									realtive flex cursor-pointer
+									relative flex cursor-pointer
 									${currentImage === item.image.id ? 'relative z-1' : ''}
 								`}
 								>
@@ -101,8 +101,15 @@ const Gallery = ({
 									src={getStrapiMediaUrl(item.image.url)}
 									alt={item.image.alternativeText ?? ''}
 									className="w-full object-cover"
-									width={400}
-									height={400}
+									width={1000}
+									height={1000}
+									sizes={`
+										(min-width: 1280px) 20vw,
+										(min-width: 1024px) 25vw,
+										(min-width: 768px) 33.33vw,
+										(min-width: 640px) 50vw,
+										100vw	
+									`}
 									/>
 								</motion.div>
 							)
