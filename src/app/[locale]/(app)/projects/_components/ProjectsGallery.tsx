@@ -69,9 +69,14 @@ const ProjectsGallery = ({
 								src={getStrapiMediaUrl(item.cover?.url)}
 								alt={item.cover?.alternativeText ?? ''}
 								className="w-full object-cover"
-								width={400}
-								height={400}
 								type={item.type}
+								width={1000}
+								height={1000}
+								sizes={`
+									(max-width: 640px) 500px,
+									(max-width: 1024px) 800px,
+									1000px
+								`}
 								/>
 								<h3>
 									{item.title}

@@ -44,11 +44,9 @@ const ImageViewer = ({
 							width={1000}
 							height={1000}
 							sizes={`
-								(min-width: 1280px) 20vw,
-								(min-width: 1024px) 25vw,
-								(min-width: 768px) 33.33vw,
-								(min-width: 640px) 50vw,
-								100vw	
+								(max-width: 640px) 500px,
+								(max-width: 1024px) 800px,
+								1000px
 							`}
 							/>
 						</motion.div>
