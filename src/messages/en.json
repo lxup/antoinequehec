@@ -1,0 +1,36 @@
+{
+	"common": {
+		"next": "Next",
+		"previous": "Previous",
+		"select_language": "Select language",
+		"copy_link": "Copy link",
+		"projects": "Projects",
+		"gallery": "Gallery",
+		"writing": "Writing",
+		"contact": "Contact",
+		"download": "Download",
+		"book": "Book",
+		"cv": "CV",
+		"showreel": "Showreel"
+	},
+	"pages": {
+		"projects": {
+			"metadata": {
+				"title": "Projects",
+				"description": "Discover my projects"
+			}
+		},
+		"gallery": {
+			"metadata": {
+				"title": "Gallery",
+				"description": "Discover my gallery"
+			}
+		},
+		"contact": {
+			"metadata": {
+				"title": "Contact",
+				"description": "Contact me"
+			}
+		}
+	}
+}

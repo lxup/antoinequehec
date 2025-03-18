@@ -1,0 +1,36 @@
+{
+	"common": {
+		"next": "Suivant",
+		"previous": "Précédent",
+		"select_language": "Sélectionner la langue",
+		"copy_link": "Copier le lien",
+		"projects": "Projets",
+		"gallery": "Galerie",
+		"writing": "Écriture",
+		"contact": "Contact",
+		"download": "Télécharger",
+		"book": "Book",
+		"cv": "CV",
+		"showreel": "Bande démo"
+	},
+	"pages": {
+		"projects": {
+			"metadata": {
+				"title": "Projets",
+				"description": "Découvrez mes projets"
+			}
+		},
+		"gallery": {
+			"metadata": {
+				"title": "Galerie",
+				"description": "Découvrez ma galerie"
+			}
+		},
+		"contact": {
+			"metadata": {
+				"title": "Contact",
+				"description": "Contactez-moi"
+			}
+		}
+	}
+}
