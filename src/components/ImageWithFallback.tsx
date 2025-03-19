@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import { ComponentProps, useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
-import { ImageIcon, VideoIcon } from 'lucide-react';
+import { AudioLinesIcon, BookTextIcon, ImageIcon, VideoIcon } from 'lucide-react';
 
 interface ImageWithFallbackProps extends ComponentProps<typeof Image> {
   src: string;
@@ -69,10 +69,14 @@ export function Fallback({
         className
       )}
     >
-      {type == 'alt' ? (
+      {type === 'alt' ? (
        <p>{alt}</p>
-      ) : type == 'video' ? (
+      ) : type === 'video' ? (
         <VideoIcon color="#fff" className="w-2/5 h-2/5" />
+      ) : type === 'sound' ? (
+        <AudioLinesIcon color="#fff" className="w-2/5 h-2/5" />
+      ) : type === 'writing' ? (
+        <BookTextIcon color="#fff" className="w-2/5 h-2/5" />
       ) : (
         <ImageIcon color="#fff" className="w-2/5 h-2/5" />
       )}

@@ -6,12 +6,14 @@
 		"copy_link": "Copy link",
 		"projects": "Projects",
 		"gallery": "Gallery",
-		"writing": "Writing",
 		"contact": "Contact",
 		"download": "Download",
 		"book": "Book",
 		"cv": "CV",
-		"showreel": "Showreel"
+		"showreel": "Showreel",
+		"video": "Video",
+		"sound": "Sound",
+		"writing": "Writing"
 	},
 	"pages": {
 		"projects": {
