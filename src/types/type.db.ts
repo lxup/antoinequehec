@@ -64,4 +64,11 @@ export type Project = {
 	slug: string;
 	title: string;
 	description: string;
+	job: string;
+	type: string;
+	media_url: string;
+	date: string;
+	genre: string;
+	duration: number;
+	production: string;
 }
